@@ -2,6 +2,8 @@ import '../styles/App.css';
 import Table from './Table'
 import React, { useState, useEffect } from 'react'
 import { getAllIssues } from '../api/APIGet';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Issue from './Issue';
 
 export default function App() {
   const [rows, setRows] = useState([]);
@@ -9,7 +11,7 @@ export default function App() {
 
   useEffect(() => {
     getAllIssues()
-      .then(res=>{
+      .then(res => {
         setRows(res);
         setFetched(true);
       })
@@ -26,8 +28,17 @@ export default function App() {
   else {
     return (
       <div className='appClass'>
-        <h1>Issues GitHub</h1>
-        <Table rows={rows} />
+        <Router>
+          <Switch>
+            <Route path='/' exact>
+              <h1>Issues GitHub</h1>
+              <Table rows={rows} />
+            </Route >
+            <Route path='/issue/:id'>
+              <Issue />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     )
   }

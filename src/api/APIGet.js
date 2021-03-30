@@ -10,7 +10,7 @@ exports.getAllIssues = async ()=>{
     }
 }
 
-exports.getAllIssues = async (id)=>{
+exports.getIssue = async (id)=>{
     try{
         const url = `http://localhost:3000/api/issues/${id}`;
         const res = await fetch(url)

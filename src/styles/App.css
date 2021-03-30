@@ -68,10 +68,15 @@ td p{
     margin-bottom: 0;
     margin-top: 5px;
     font-size: 23px;
-    cursor: pointer;
 }
 
-.title:hover{
+.titleLink{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.titleLink:hover{
     color: rgb(8, 130, 230)
 }
 
