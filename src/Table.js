@@ -1,37 +1,33 @@
-import React, { Component } from 'react'
+import TableRow from './TableRow'
+import React, { useState } from 'react'
 
+export default function Table(props) {
+    const [rows, setRows] = useState(() => props.rows);
 
-export default class Table extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            rows: props.rows,
-        };
-
-        this.addRow = this.addRow.bind(this);
+    function addRow() {
+        setRows(prevRows =>{
+            const rowsCopy = prevRows.slice();
+            rowsCopy.push({title:"Greska", user:'Mlan', _id:'213'})
+            return rowsCopy
+        })
     }
 
-    addRow() {
-        const rows = this.state.rows.slice();
-        rows.push('new row');
-        this.setState({ rows: rows })
-    }
+    return (
+        <>
+        <button className='addBtn' onClick={addRow}>New issue</button>
+        <div className='issues_div'>
+            <table className='issues'>
+                <tbody>
+                    {rows.map((r) => (
+                        <TableRow issue={r} />
+                    ))}
+                </tbody>
+            </table>
+        </div>
 
-    render() {
-        return (
-            <>
-                <button className='addBtn' onClick={this.addRow}>New issue</button>
-                <div className='issues_div'>
-                    <table className='issues'>
-                        {this.state.rows.map((r) => (
-                            <tr>
-                                <td>{r}</td>
-                            </tr>
-                        ))}
-                    </table>
-                </div>
-
-            </>
-        )
-    }
+    </>
+    )
 }
+
+
+

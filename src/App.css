@@ -55,6 +55,24 @@ h1{
 }
 
 .issues tr{
-    height: 50px;
+    height: 40px;
     border: 1px solid black;
+}
+td p{
+    text-align: left;
+    padding-left: 10px;
+}
+
+.title{
+    font-weight: Bold;
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 23px;
+}
+
+.user{
+    font-weight: lighter;
+    opacity: 50%;
+    margin-top: 3px;
+    margin-bottom: 5px;
 }
