@@ -74,6 +74,7 @@ td p{
     cursor: pointer;
     text-decoration: none;
     color: black;
+    padding-bottom: 15px;
 }
 
 .titleLink:hover{
@@ -85,4 +86,17 @@ td p{
     opacity: 50%;
     margin-top: 3px;
     margin-bottom: 5px;
+}
+
+.issue{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.image{
+    text-align: left;
+    align-self: left;
+    align-content: left;
+    width: 30px;
+    height: 30px;
 }
