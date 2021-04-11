@@ -5,6 +5,8 @@ import OpenCloseIssueImg from './OpenCloseIssueImg';
 export default function TableRow(props) {
     const [issue, setIssue] = useState(props.issue);
 
+    
+
     return (
         <tr>
             <td key={issue._id}>
@@ -12,6 +14,7 @@ export default function TableRow(props) {
                     <OpenCloseIssueImg closed={issue.closed}/>
                     <Link to={`/issue/${issue._id}`} className='titleLink'>{issue.title}</Link>
                 </p>
+                    
                 <p className='user'>Opened by {issue.user}</p>
             </td>
         </tr>
