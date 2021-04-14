@@ -23,6 +23,9 @@ export default function Table(props) {
         postIssue(issue)
             .then(res => {
                 console.log(res)
+                const r = rows.slice();
+                r.push(res)
+                setRows(r);
             })
             .catch(err => console.log(err))
     }
