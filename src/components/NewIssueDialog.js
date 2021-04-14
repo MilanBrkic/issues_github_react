@@ -5,7 +5,7 @@ import { useDialog } from 'react-st-modal';
 export default function NewIssueDialog() {
     const dialog = useDialog();
 
-    const [value, setValue] = useState({user:'', title:'', text:''});
+    const [value, setValue] = useState({user:'', title:'', text:'', file:[]});
 
     return (
         <div className='newIssueDialog'>
@@ -32,7 +32,7 @@ export default function NewIssueDialog() {
             />
             <br />
             <label htmlFor='text'  className='labelDialog'>Text:</label>
-            <input className='inputTextDialog'
+            <textarea className='inputTextDialog textArea'
                 type="text"
                 name='text'
                 onChange={(e) => {
@@ -42,6 +42,16 @@ export default function NewIssueDialog() {
                 }}
             />
             <br/>
+            <input className='btn btnDialog fileupload' 
+                type="file" 
+                id="fileUpload" 
+                multiple 
+                onChange={(e)=>{
+                    const v = value;
+                    v.file = e.target.files;
+                    setValue(v);
+                }}
+                />
             <button className='btn btnDialog'
                 onClick={() => {
                     // Сlose the dialog and return the value

@@ -16,7 +16,7 @@ export default function TableIssue(props) {
                 <tbody>
                     <tr>
                         <td className='InIssue'>
-                            {props.issue.text}
+                            {props.issue.text}<br/>
                             {props.issue.file.map(file => {
                                 return (<img className='inIssueImage' src={getImageUrl(file)} alt={file}/>)
                             })}

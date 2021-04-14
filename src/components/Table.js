@@ -19,7 +19,7 @@ export default function Table(props) {
     }, [])
 
     function addIssue(issue) {
-        issue.file = [];
+        console.log(issue);
         postIssue(issue)
             .then(res => {
                 console.log(res)

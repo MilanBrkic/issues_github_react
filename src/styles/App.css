@@ -32,12 +32,17 @@ h1{
 }
 
 .inputTextDialog{
+
     color: white;
     margin-top: 2vh;
 }
 
+.textArea{
+    height: 10vh;
+}
+
 .labelDialog{
-    place-self: center;
+    place-self: start center;
     margin-top: 2vh;
     padding-left: 1vh;
 }
@@ -59,7 +64,13 @@ h1{
     place-self: end;
     grid-column: 2;
 }
-
+.fileupload{
+    padding-top: 1vh;
+    padding-left: 1vh;
+    width: 200px;
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
+}
 .addBtn{
     grid-column: 3;
     grid-row: 2;

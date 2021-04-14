@@ -2,10 +2,14 @@ exports.postIssue = async (issue) => {
     try {
         const formData = new FormData();
 
-        for(const name in issue){
-            formData.append(name, issue[name]);
+        formData.append('title', issue.title);
+        formData.append('user', issue.user);
+        formData.append('text',issue.text);
+        for (const i in issue.file) {
+            formData.append('file', issue.file[i]);
         }
 
+        console.log(formData);
         const url = 'http://localhost:3000/api/issues';
         const options = {
             method: 'POST',

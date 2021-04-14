@@ -13,7 +13,7 @@ export default function NewIssueBtn(props) {
               showCloseIcon: true,
             }
           );
-          props.handleOnClick(result);
+          if(result) props.handleOnClick(result);
         }}>New issue</button>
     )
 }
