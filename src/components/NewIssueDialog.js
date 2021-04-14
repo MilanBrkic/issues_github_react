@@ -5,7 +5,7 @@ import { useDialog } from 'react-st-modal';
 export default function NewIssueDialog() {
     const dialog = useDialog();
 
-    const [value, setValue] = useState({user:'', title:'', title:''});
+    const [value, setValue] = useState({user:'', title:'', text:''});
 
     return (
         <div className='newIssueDialog'>
