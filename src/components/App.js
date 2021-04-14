@@ -18,6 +18,15 @@ export default function App() {
       .catch((err) => console.log(err))
   }, [])
 
+  function rerender(){
+    getAllIssues()
+      .then(res => {
+        setRows(res);
+        setFetched(true);
+      })
+      .catch((err) => console.log(err))
+  }
+
   if (!fetched) {
     return (
       <div>
@@ -32,7 +41,7 @@ export default function App() {
           <Switch>
             <Route path='/' exact>
               <h1>Issues GitHub</h1>
-              <Table rows={rows} />
+              <Table rows={rows} handleRerender={rerender}/>
             </Route >
             <Route path='/issue/:id'>
               <Issue />

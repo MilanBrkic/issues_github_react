@@ -9,13 +9,11 @@ export default function Issue() {
     const [issue, setIssue] = useState();
     const [fetched,setFetched] = useState(false);
     const {id} = useParams();
-    var row = 3;
 
     useEffect(()=>{
         getIssue(id).then((res)=>{
             setIssue(res);
             setFetched(true);
-            
         })
         .catch((err)=>{console.log(err);})
     },[])
